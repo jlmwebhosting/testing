@@ -1,0 +1,38 @@
+{
+  "name": "<module>",
+  "version": "0.0.0",
+  "description": "<module>.",
+  "main": "<module>.js",
+  "support": "<module>.support.js",
+  "deploy": "<module>.deploy.js",
+  "browser": "<module>.deploy.js",
+  "scripts": {
+	  "pristine": "rsetmod clean && flxc execute ./.install.sh",
+	  "clear": "rsetmod clean --clear",
+	  "formal": "jesy apply '*.json'",
+	  "debug:server": "mocha --watch <module>-test.js",
+	  "debug:client": "browser-sync start --server --files 'index.html'",
+	  "test:server": "mocha <module>-test.js",
+	  "test:client": "./node_modules/.bin/wdio wdio.client.js",
+	  "test": "npm run test:server && npm run test:client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkovasystems/<module>.git"
+  },
+  "keywords": [
+    "<module>",
+    "class",
+    "wrapper"
+  ],
+  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "contributors": [
+  	"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+  	"Vinse Vinalon <vinsevinalon@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volkovasystems/<module>/issues"
+  },
+  "homepage": "https://github.com/volkovasystems/<module>#readme"
+}
