@@ -8,8 +8,23 @@ const path = require( "path" );
 
 describe( "<module>", ( ) => {
 
-	const testBridge = path.resolve(__dirname, "bridge.html");
-	const bridgeURL = "file://" + testBridge;
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
+
+	describe( "`<test>`", ( ) => {
+		it( "<message>", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return <test>;
+				}
+
+			).value;
+
+			assert.equal( result, <expected> );
+
+		} );
+	} );
 
 } );
 
